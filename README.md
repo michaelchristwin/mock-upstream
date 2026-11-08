@@ -1,21 +1,23 @@
-```txt
-npm install
-npm run dev
+# mock-upstream
+
+To install dependencies:
+
+```bash
+bun install
 ```
 
-```txt
-npm run deploy
+To run:
+
+```bash
+bun run index.ts
 ```
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
+To type check:
 
-```txt
-npm run cf-typegen
+```bash
+bun check
 ```
 
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
+Run `bun fmt` to format the code.
 
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
+This project was created using `bun init` in bun v1.4.4. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.

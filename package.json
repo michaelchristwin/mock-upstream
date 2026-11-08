@@ -1,17 +1,19 @@
 {
-  "name": "deadwood",
+  "name": "mock-upstream",
   "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
-  },
-  "dependencies": {
-    "@hono/zod-validator": "^0.7.6",
-    "hono": "^4.12.8",
-    "zod": "^4.3.6"
+    "dev": "bun run --watch src/index.ts",
+    "typecheck": "bun check"
   },
   "devDependencies": {
-    "wrangler": "^4.75.0"
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "graphql": "^17.1.0",
+    "graphql-yoga": "^6.0.1"
   }
 }
